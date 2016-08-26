@@ -31,7 +31,7 @@
 	    <artifactId>tomcat-maven-plugin</artifactId>
 	    <configuration>
 		<url>http://localhost:8080/manager/text</url>
-		<server>Tomcat8</server>
+		<server>TomcatDev</server>
 	    </configuration>
 	</plugin>
             <plugin>
