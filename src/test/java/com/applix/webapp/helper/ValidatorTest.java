@@ -37,9 +37,6 @@ public class ValidatorTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of isThisANumber method, of class Validator.
-     */
     @Test
     public void testLeftOfRangeIsThisANumber() {
         String paramValue = Long.toString(Long.MIN_VALUE);
@@ -56,13 +53,13 @@ public class ValidatorTest {
         assertEquals("Expected = 2000, actual = " + result, expResult, result);
     }
 
-//    @Test
-//    public void testBorderMinusOneIsThisANumber() {
-//        String paramValue = Long.toString(-1L);
-//        long expResult = -1L;
-//        long result = Validator.isThisANumber(paramValue);
-//        assertEquals("Expected = -1, actual = " + result, expResult, result);
-//    }
+    @Test
+    public void testBorderMinusOneIsThisANumber() {
+        String paramValue = Long.toString(-1L);
+        long expResult = -1L;
+        long result = Validator.isThisANumber(paramValue);
+        assertEquals("Expected = -1, actual = " + result, expResult, result);
+    }
 
     @Test
     public void testBorderZeroIsThisANumber() {
