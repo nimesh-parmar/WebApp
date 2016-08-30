@@ -69,13 +69,13 @@ public class ValidatorTest {
         assertEquals("Expected = 0, actual = " + result, expResult, result);
     }
 
-//    @Test
-//    public void testBorderPlusOneIsThisANumber() {
-//        String paramValue = Long.toString(1L);
-//        long expResult = 1L;
-//        long result = Validator.isThisANumber(paramValue);
-//        assertEquals("Expected = 1, actual = " + result, expResult, result);
-//    }
+    @Test
+    public void testBorderPlusOneIsThisANumber() {
+        String paramValue = Long.toString(1L);
+        long expResult = 1L;
+        long result = Validator.isThisANumber(paramValue);
+        assertEquals("Expected = 1, actual = " + result, expResult, result);
+    }
 
 //    @Test
 //    public void testAboveRangeIsThisANumber() {
