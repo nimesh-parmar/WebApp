@@ -105,7 +105,7 @@ public class ValidatorTest {
     @Test
     public void testEmptyStringIsThisAValidOperator() {
         String paramOperator = "";
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = Validator.isThisAValidOperator(paramOperator);
         assertEquals("Expected = false, actual = " + result, expResult, result);
         assertEquals("", expResult, result);
