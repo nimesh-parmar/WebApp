@@ -41,30 +41,60 @@ public class ValidatorTest {
      * Test of isThisANumber method, of class Validator.
      */
     @Test
-    public void testIsThisANumber() {
-        System.out.println("isThisANumber");
-        String paramValue = "-1";
+    public void testBelowRangeIsThisANumber() {
+        String paramValue = Long.toString((Long.MIN_VALUE - 1));
         long expResult = -1L;
         long result = Validator.isThisANumber(paramValue);
-        System.out.println("result = " + result);
         assertEquals("Expected = -1, actual = " + result, expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of isThisAValidOperator method, of class Validator.
-     */
     @Test
-    public void testIsThisAValidOperator() {
-        System.out.println("isThisAValidOperator");
-        String paramOperator = "B";
-        boolean expResult = false;
+    public void testWithinRangeIsThisANumber() {
+        String paramValue = Long.toString(2000L);
+        long expResult = 2000L;
+        long result = Validator.isThisANumber(paramValue);
+        assertEquals("Expected = 2000, actual = " + result, expResult, result);
+    }
+
+//    @Test
+//    public void testBorderMinusOneIsThisANumber() {
+//        String paramValue = Long.toString(-1L);
+//        long expResult = -1L;
+//        long result = Validator.isThisANumber(paramValue);
+//        assertEquals("Expected = -1, actual = " + result, expResult, result);
+//    }
+
+    @Test
+    public void testBorderZeroIsThisANumber() {
+        String paramValue = Long.toString(0L);
+        long expResult = 0L;
+        long result = Validator.isThisANumber(paramValue);
+        assertEquals("Expected = 0, actual = " + result, expResult, result);
+    }
+
+//    @Test
+//    public void testBorderPlusOneIsThisANumber() {
+//        String paramValue = Long.toString(1L);
+//        long expResult = 1L;
+//        long result = Validator.isThisANumber(paramValue);
+//        assertEquals("Expected = 1, actual = " + result, expResult, result);
+//    }
+
+//    @Test
+//    public void testAboveRangeIsThisANumber() {
+//        String paramValue = Long.toString((Long.MAX_VALUE + 1));
+//        long expResult = -1L;
+//        long result = Validator.isThisANumber(paramValue);
+//        assertEquals("Expected = -1, actual = " + result, expResult, result);
+//    }
+
+    @Test
+    public void testPlusIsThisAValidOperator() {
+        String paramOperator = "+";
+        boolean expResult = true;
         boolean result = Validator.isThisAValidOperator(paramOperator);
-        assertEquals("Expected = false, actual = " + result, expResult, result);
+        assertEquals("Expected = true, actual = " + result, expResult, result);
         assertEquals("", expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
     
 }
