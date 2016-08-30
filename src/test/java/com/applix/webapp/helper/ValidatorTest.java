@@ -69,30 +69,48 @@ public class ValidatorTest {
         assertEquals("Expected = 2000, actual = " + result, expResult, result);
     }
 
-    @Test
-    public void testBorderMinusOneIsThisANumber() {
-        String paramValue = Long.toString(-1L);
-        long expResult = -1L;
-        long result = Validator.isThisANumber(paramValue);
-        assertEquals("Expected = -1, actual = " + result, expResult, result);
-    }
+//    @Test
+//    public void testBorderMinusOneIsThisANumber() {
+//        String paramValue = Long.toString(-1L);
+//        long expResult = -1L;
+//        long result = Validator.isThisANumber(paramValue);
+//        assertEquals("Expected = -1, actual = " + result, expResult, result);
+//    }
+
+//    @Test
+//    public void testBorderZeroIsThisANumber() {
+//        String paramValue = Long.toString(0L);
+//        long expResult = 0L;
+//        long result = Validator.isThisANumber(paramValue);
+//        assertEquals("Expected = 0, actual = " + result, expResult, result);
+//    }
+
+//    @Test
+//    public void testBorderPlusOneIsThisANumber() {
+//        String paramValue = Long.toString(1L);
+//        long expResult = 1L;
+//        long result = Validator.isThisANumber(paramValue);
+//        assertEquals("Expected = 1, actual = " + result, expResult, result);
+//    }
 
     @Test
-    public void testBorderZeroIsThisANumber() {
-        String paramValue = Long.toString(0L);
-        long expResult = 0L;
-        long result = Validator.isThisANumber(paramValue);
-        assertEquals("Expected = 0, actual = " + result, expResult, result);
+    public void testNullIsThisAValidOperator() {
+        String paramOperator = null;
+        boolean expResult = false;
+        boolean result = Validator.isThisAValidOperator(paramOperator);
+        assertEquals("Expected = false, actual = " + result, expResult, result);
+        assertEquals("", expResult, result);
     }
-
+    
     @Test
-    public void testBorderPlusOneIsThisANumber() {
-        String paramValue = Long.toString(1L);
-        long expResult = 1L;
-        long result = Validator.isThisANumber(paramValue);
-        assertEquals("Expected = 1, actual = " + result, expResult, result);
+    public void testEmptyStringIsThisAValidOperator() {
+        String paramOperator = "";
+        boolean expResult = true;
+        boolean result = Validator.isThisAValidOperator(paramOperator);
+        assertEquals("Expected = false, actual = " + result, expResult, result);
+        assertEquals("", expResult, result);
     }
-
+    
     @Test
     public void testPlusIsThisAValidOperator() {
         String paramOperator = "+";
@@ -102,4 +120,30 @@ public class ValidatorTest {
         assertEquals("", expResult, result);
     }
     
+    @Test
+    public void testMinusIsThisAValidOperator() {
+        String paramOperator = "-";
+        boolean expResult = true;
+        boolean result = Validator.isThisAValidOperator(paramOperator);
+        assertEquals("Expected = true, actual = " + result, expResult, result);
+        assertEquals("", expResult, result);
+    }
+    
+    @Test
+    public void testMultiplyIsThisAValidOperator() {
+        String paramOperator = "*";
+        boolean expResult = true;
+        boolean result = Validator.isThisAValidOperator(paramOperator);
+        assertEquals("Expected = true, actual = " + result, expResult, result);
+        assertEquals("", expResult, result);
+    }
+    
+    @Test
+    public void testDivideIsThisAValidOperator() {
+        String paramOperator = "/";
+        boolean expResult = true;
+        boolean result = Validator.isThisAValidOperator(paramOperator);
+        assertEquals("Expected = true, actual = " + result, expResult, result);
+        assertEquals("", expResult, result);
+    }
 }
