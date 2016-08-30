@@ -38,6 +38,22 @@ public class ValidatorTest {
     }
 
     @Test
+    public void testNullIsThisANumber() {
+        String paramValue = null;
+        long expResult = -1L;
+        long result = Validator.isThisANumber(paramValue);
+        assertEquals("Expected = -1, actual = " + result, expResult, result);
+    }
+
+    @Test
+    public void testEmptyStringIsThisANumber() {
+        String paramValue = "";
+        long expResult = -1L;
+        long result = Validator.isThisANumber(paramValue);
+        assertEquals("Expected = -1, actual = " + result, expResult, result);
+    }
+
+    @Test
     public void testLeftOfRangeIsThisANumber() {
         String paramValue = Long.toString(Long.MIN_VALUE);
         long expResult = Long.MIN_VALUE;
@@ -76,14 +92,6 @@ public class ValidatorTest {
         long result = Validator.isThisANumber(paramValue);
         assertEquals("Expected = 1, actual = " + result, expResult, result);
     }
-
-//    @Test
-//    public void testAboveRangeIsThisANumber() {
-//        String paramValue = Long.toString((Long.MAX_VALUE + 1));
-//        long expResult = -1L;
-//        long result = Validator.isThisANumber(paramValue);
-//        assertEquals("Expected = -1, actual = " + result, expResult, result);
-//    }
 
     @Test
     public void testPlusIsThisAValidOperator() {
