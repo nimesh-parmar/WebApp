@@ -41,11 +41,11 @@ public class ValidatorTest {
      * Test of isThisANumber method, of class Validator.
      */
     @Test
-    public void testBelowRangeIsThisANumber() {
-        String paramValue = Long.toString((Long.MIN_VALUE - 1));
-        long expResult = -1L;
+    public void testLeftOfRangeIsThisANumber() {
+        String paramValue = Long.toString(Long.MIN_VALUE);
+        long expResult = Long.MIN_VALUE;
         long result = Validator.isThisANumber(paramValue);
-        assertEquals("Expected = -1, actual = " + result, expResult, result);
+        assertEquals("Expected = " + Long.toString(Long.MIN_VALUE) + ", actual = " + result, expResult, result);
     }
 
     @Test
