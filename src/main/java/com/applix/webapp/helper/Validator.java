@@ -9,6 +9,7 @@ public class Validator {
             number = Long.parseLong(paramValue);
         }
         catch(NumberFormatException nfe) {
+            System.out.println("Exception caught = " + nfe.getMessage());
             number = -1;
         }
         return number;
@@ -17,8 +18,10 @@ public class Validator {
     public static boolean isThisAValidOperator(String paramOperator) {
         boolean operatorValid = false;
         if(
-                null != paramOperator &&
-                !("".equals(paramOperator)) &&
+                (   
+                    null != paramOperator &&
+                    !("".equals(paramOperator))
+                )   &&
                 (
                     (paramOperator.equals("+")) ||
                     (paramOperator.equals("-")) ||

@@ -34,7 +34,7 @@ public class AddNumbers extends HttpServlet {
         throws ServletException, IOException {
 
         boolean allValuesNumeric = true;
-        boolean operatorValid = false;
+        boolean operatorValid = true;
         int i;
         Iterator itrParameters;
         Long[] values = new Long[2];
@@ -65,7 +65,7 @@ public class AddNumbers extends HttpServlet {
                     values[0] = Validator.isThisANumber(arrParameterValues[0]);
                 }
                 if(i==1) {
-                    if(Validator.isThisAValidOperator(arrParameterValues[0])) {
+                    if(Validator.isThisAValidOperator(arrParameterValues[0].trim())) {
                         operator = arrParameterValues[0];
                     }
                     else {
@@ -78,10 +78,12 @@ public class AddNumbers extends HttpServlet {
                 i++;
                 out.println("</p>");
             }
-            for (Long value : values) {
-                if (value == -1) {
-                    allValuesNumeric = false;
-                    break;
+            for (int j=0 ; j<values.length ; j++) {
+                if(j==0 || j==1) {
+                    if(values[j] == -1) {
+                        allValuesNumeric = false;
+                        break;
+                    }
                 }
             }
             if(
