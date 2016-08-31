@@ -40,7 +40,7 @@ public class ValidatorTest {
     @Test
     public void testNullIsThisANumber() {
         String paramValue = null;
-        long expResult = -1L;
+        long expResult = 0L;
         long result = Validator.isThisANumber(paramValue);
         assertEquals("Expected = -1, actual = " + result, expResult, result);
     }
@@ -48,7 +48,7 @@ public class ValidatorTest {
     @Test
     public void testEmptyStringIsThisANumber() {
         String paramValue = "";
-        long expResult = -1L;
+        long expResult = 0L;
         long result = Validator.isThisANumber(paramValue);
         assertEquals("Expected = -1, actual = " + result, expResult, result);
     }
@@ -56,7 +56,7 @@ public class ValidatorTest {
     @Test
     public void testLeftOfRangeIsThisANumber() {
         String paramValue = Long.toString(Long.MIN_VALUE);
-        long expResult = Long.MIN_VALUE;
+        long expResult = -1L;
         long result = Validator.isThisANumber(paramValue);
         assertEquals("Expected = " + Long.toString(Long.MIN_VALUE) + ", actual = " + result, expResult, result);
     }
