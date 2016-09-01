@@ -8,4 +8,12 @@
                 <goal>package</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-Checkstyle</actionName>
+            <displayName>Checkstyle</displayName>
+            <goals>
+                <goal>checkstyle</goal>
+                <goal>checkstyle</goal>
+            </goals>
+        </action>
     </actions>
